@@ -1,8 +1,20 @@
 name: Run Install Script
 on: [push]
 jobs:
-  install-script-run:
+  apt-install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - run: ./install-scripts/install
+
+  arch-install:
+    runs-on: ubuntu-latest
+    container: library/archlinux:latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup user
+        run: |
+          pacman -Syy --noconfirm sudo
+          useradd -m github
+          echo "github ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/github
+      - run: sudo -u github bash -c "./install-scripts/install"
