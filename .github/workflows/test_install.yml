@@ -17,4 +17,5 @@ jobs:
           pacman -Syy --noconfirm sudo
           useradd -m github
           echo "github ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/github
+      - run: chown github:github /dev/tty
       - run: sudo -u github bash -c "./install-scripts/install"
