@@ -200,15 +200,14 @@ bindsym $mod+bracketleft exec "~/.i3/audio_switcher yeti"
 bindsym $mod+bracketright exec "~/.i3/audio_switcher speakers"
 
 # screen brightness keybindings
-bindsym XF86MonBrightnessDown exec ~/.i3/xbacklight -dec 2500
-bindsym XF86MonBrightnessUp exec ~/.i3/xbacklight -inc 2500
+bindsym XF86MonBrightnessDown exec ~/.i3/xbacklight -dec 25
+bindsym XF86MonBrightnessUp exec ~/.i3/xbacklight -inc 25
 
 # remap any keys needed
 exec_always --no-startup-id xmodmap ~/.xmodmap
 
 # set up monitors
 # bindsym $mod+m exec ~/.i3/setup_monitor_position
-exec_always --no-startup-id /usr/bin/nvidia-settings --load-config-only
 
 # use compton for composition
 exec --no-startup-id picom --config ~/.picom.conf
