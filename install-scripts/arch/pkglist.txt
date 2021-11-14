@@ -1,6 +1,8 @@
+alacritty
 asdf-vm
 autoconf
 automake
+awesome-terminal-fonts
 base
 binutils
 bison
@@ -45,6 +47,7 @@ peek
 picom
 pkgconf
 pop-bin
+powerline-fonts
 powertop
 pulseaudio
 pulseaudio-bluetooth
@@ -116,3 +119,4 @@ xorg-xwud
 xterm
 yay
 zsh
+zsh-theme-powerlevel10k-git
