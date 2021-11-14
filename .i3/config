@@ -4,8 +4,8 @@ set $mod Mod4
 font pango:Jetbrains Mono 10
 
 for_window [class="^.*"] border pixel 1
-gaps inner 5
-gaps outer 5
+gaps inner 3
+gaps outer 3
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
@@ -34,11 +34,14 @@ status_command i3status
   }
 }
 
+#crop-area screenshot by pressing Mod + printscreen
+# bindsym $mod+Print --release exec import ~/scrshot/$(date '+%H_%M_%S-%m_%d').png
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec alacritty
 
 # start a browser
 bindsym $mod+b exec google-chrome-stable
@@ -216,7 +219,7 @@ exec --no-startup-id picom --config ~/.picom.conf
 exec --no-startup-id dunst
 
 # Easy shortcut to take a screenshot
-bindsym $mod+shift+s exec ~/.i3/screenshot 2>> /tmp/screenielog
+bindsym $mod+Print exec ~/.i3/screenshot 2>> /tmp/screenielog
 
 bindsym $mod+semicolon exec "setxkbmap -layout us -variant dvorak -option compose:102 -option keypad:atm -option kpdl:semi"
 bindsym $mod+s exec "setxkbmap us"
