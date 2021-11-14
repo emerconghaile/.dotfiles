@@ -45,7 +45,6 @@ pulseaudio
 pulseaudio-bluetooth
 redshift
 rofi
-runelite
 rxvt-unicode
 scrot
 slack-desktop
