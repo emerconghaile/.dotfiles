@@ -3,9 +3,9 @@ set $mod Mod4
 
 font pango:Jetbrains Mono 10
 
-for_window [class="^.*"] border pixel 2
-gaps inner 10
-gaps outer 10
+for_window [class="^.*"] border pixel 1
+gaps inner 5
+gaps outer 5
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
@@ -187,7 +187,8 @@ bindsym $mod+Shift+Tab exec i3-msg move workspace to output left
 exec --no-startup-id "bash ~/.i3/battery_monitor.sh"
 
 # wallpaper
-exec --no-startup-id "sh ~/.i3/wallpaper.sh"
+# exec --no-startup-id "sh ~/.i3/wallpaper.sh"
+exec --no-startup-id hsetroot -solid "#000000"
 
 # flux
 exec --no-startup-id redshift
