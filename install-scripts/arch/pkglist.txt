@@ -5,6 +5,7 @@ base
 binutils
 bison
 bluez-utils
+bpytop
 chrony
 code
 dhcpcd
@@ -22,14 +23,18 @@ git
 git-lfs
 github-cli
 google-chrome
+groff
 grub
+hsetroot
 i3-gaps
 i3status
 iwd
+libtool
 linux
 linux-firmware
 m4
 make
+nano
 neovim
 nmap
 noto-fonts-emoji

@@ -191,7 +191,7 @@ exec --no-startup-id "bash ~/.i3/battery_monitor.sh"
 exec --no-startup-id hsetroot -solid "#000000"
 
 # flux
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk -t 6400:2000
 
 # audio keybindings
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
