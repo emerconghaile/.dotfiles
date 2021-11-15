@@ -3,7 +3,7 @@ set $mod Mod4
 
 font pango:Jetbrains Mono 10
 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 gaps inner 3
 gaps outer 3
 

@@ -4,8 +4,9 @@ selection:
 font:
   normal:
     family: Jetbrains Mono
+  size: 12.0
 
-background_opacity: 0.98
+background_opacity: 0
 colors:
   primary:
     background: '0x22212c'
