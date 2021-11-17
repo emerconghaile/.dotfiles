@@ -32,6 +32,7 @@ hsetroot
 i3-gaps
 i3status
 iwd
+iwgtk
 libtool
 linux
 linux-firmware
