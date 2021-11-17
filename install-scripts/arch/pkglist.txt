@@ -38,6 +38,7 @@ linux-firmware
 m4
 make
 nano
+neofetch
 neovim
 nmap
 noto-fonts-emoji
@@ -64,6 +65,7 @@ thefuck
 tmux
 ttf-jetbrains-mono
 ttf-mac-fonts
+ttf-symbola
 vim
 vlc
 wget
