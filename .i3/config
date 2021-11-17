@@ -20,7 +20,8 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #F8F8F2
 
 bar {
-status_command i3status
+  status_command i3status
+
   colors {
     background #282A36
     statusline #F8F8F2
@@ -212,6 +213,7 @@ exec_always --no-startup-id xmodmap ~/.xmodmap
 
 # set up monitors
 # bindsym $mod+m exec ~/.i3/setup_monitor_position
+# exec_always --no-startup-id /usr/bin/nvidia-settings --load-config-only
 
 # use compton for composition
 exec --no-startup-id picom --config ~/.picom.conf

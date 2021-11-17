@@ -1,5 +1,20 @@
 #!/usr/bin/env ruby
 
+class String
+  def red
+    color(31)
+  end
+
+  def green
+    color(32)
+  end
+
+  private
+
+  def color(code)
+    "\e[#{code}m#{self}\e[0m"
+  end
+end
 class Dotfile
   attr_reader :filename
 
@@ -16,7 +31,7 @@ class Dotfile
        .map do |file|
          if NESTED_LINKS.include?(file)
            Dir.glob("#{path}/#{file}/*")
-             .map { |f| f.match(/#{file}\/\w+/).to_s }
+              .map { |f| f.match(%r{#{file}/\S+}).to_s }
          else
            file
          end
@@ -34,16 +49,17 @@ class Dotfile
   def link!
     return false if ignored?
 
+    print "#{full_path} -> "
+
     if File.exist? link_path
-      puts <<~MESSAGE
-        File or symlink located at #{link_path} already exists.
-        Please delete it and re-run to re-link.
-      MESSAGE
+      puts File.symlink?(link_path) ? 'Already linked'.green : 'File Exists (Delete and re-run)'.red
 
       return false
     end
 
     File.symlink(full_path, link_path)
+
+    puts 'Linked!'.green
   end
 
   def full_path

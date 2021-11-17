@@ -45,21 +45,6 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-if [ -f "$HOME/.env" ]; then
-    . "$HOME/.env"
-fi
-
-if [ -d "$HOME/.bin" ] ; then
-    PATH="$HOME/.bin:$PATH"
-fi
-
-if [ -d "/snap/bin" ] ; then
-    PATH="/snap/bin:$PATH"
-fi
-
-FZF_CTRL_T_COMMAND="ag -g ''"
-FZF_DEFAULT_COMMAND="ag -g ''"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
