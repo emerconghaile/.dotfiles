@@ -4,8 +4,8 @@ set $mod Mod4
 font pango:Jetbrains Mono 10
 
 for_window [class="^.*"] border pixel 0
-gaps inner 3
-gaps outer 3
+gaps inner 2
+gaps outer 2
 
 bindsym $mod+z		gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
@@ -45,10 +45,10 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # start a browser
-bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec firefox-nightly
 
 # connect to Bose 700's
-bindsym $mod+t exec echo "connect 4C:87:5D:27:FF:15" | bluetoothctl
+# ebindsym $mod+t exec echo "connect 4C:87:5D:27:FF:15" | bluetoothctl
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -147,16 +147,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym semicolon resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -213,8 +213,10 @@ exec_always --no-startup-id xmodmap ~/.xmodmap
 # use compton for composition
 exec --no-startup-id picom --config ~/.picom.conf
 
+# notification service
 exec --no-startup-id dunst
 
+# i3status tray icons
 exec_always --no-startup-id ~/.i3/tray
 
 # Easy shortcut to take a screenshot
