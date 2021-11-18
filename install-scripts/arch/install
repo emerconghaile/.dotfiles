@@ -16,7 +16,9 @@ then
   makepkg -si --noconfirm
 fi
 
-yay -S --needed --noconfirm - < "$SCRIPT_DIR"/pkglist.txt
+cat "$SCRIPT_DIR"/pkglist.txt | xargs yay -S --needed --noconfirm
+
+sudo chsh -s `which zsh` `whoami`
 
 # asdf
 . /opt/asdf-vm/asdf.sh
@@ -27,5 +29,3 @@ latest_ruby=$(asdf list-all ruby | ag "^[2-9].[0-9].[0-9]$" | tail -1)
 
 asdf install ruby $latest_ruby
 asdf global ruby $latest_ruby
-
-[ -d ~/.oh-my-zsh ] || sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

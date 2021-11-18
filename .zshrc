@@ -1,11 +1,8 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+ZSH=$HOME/.oh-my-zsh
+if [ -d /usr/share/oh-my-zsh ]; then
+  ZSH=/usr/share/oh-my-zsh
 fi
 
-export ZSH=$HOME/.oh-my-zsh
 export EDITOR='vim'
 
 export HISTSIZE=1000000000
@@ -28,7 +25,7 @@ DISABLE_UPDATE_PROMPT="true"
 # Plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(git github rails bundler terraform tmux tmuxinator asdf docker docker-compose \
-         ssh-agent heroku aws gh)
+         ssh-agent heroku aws gh fzf)
 
 source $ZSH/oh-my-zsh.sh
 

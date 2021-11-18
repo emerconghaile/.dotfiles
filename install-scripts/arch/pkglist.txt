@@ -4,6 +4,8 @@ asdf-vm
 autoconf
 automake
 awesome-terminal-fonts
+aws-cli
+aws-session-manager-plugin
 base
 binutils
 bison
@@ -12,6 +14,8 @@ bluez-utils
 bpytop
 chrony
 code
+ctags
+cups
 dhcpcd
 discord
 docker
@@ -23,6 +27,7 @@ feh
 firefox
 flex
 gcc
+ghostscript
 git
 git-lfs
 github-cli
@@ -44,6 +49,7 @@ neofetch
 neovim
 nmap
 noto-fonts-emoji
+oh-my-zsh-git
 openssh
 pasystray
 patch
