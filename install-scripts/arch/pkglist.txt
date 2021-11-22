@@ -133,4 +133,4 @@ xorg-xwud
 xterm
 yay
 zsh
-zsh-theme-powerlevel10k-git
+zsh-theme-powerlevel10k
