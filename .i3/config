@@ -1,13 +1,13 @@
 set $mod Mod4
 
 # startup
-exec --no-startup-id "bash ~/.i3/battery_monitor.sh"
-exec --no-startup-id ~/.i3/wallpaper.sh
-exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-exec --no-startup-id redshift
+exec_always --no-startup-id "bash ~/.i3/battery_monitor.sh"
+exec_always --no-startup-id hsetroot -solid "#000000"
+exec_always --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec_always --no-startup-id redshift-gtk -t 6400:2000
 exec_always --no-startup-id xmodmap ~/.xmodmap
-exec --no-startup-id picom --config ~/.picom.conf
-exec --no-startup-id dunst
+exec_always --no-startup-id picom --config ~/.picom.conf
+exec_always --no-startup-id dunst
 exec_always --no-startup-id ~/.i3/tray
 
 # audio keybindings
@@ -205,20 +205,6 @@ bindsym $mod+Tab exec i3-msg move workspace to output right
 bindsym $mod+Shift+Tab exec i3-msg move workspace to output left
 
 
-# wallpaper
-# exec --no-startup-id "sh ~/.i3/wallpaper.sh"
-exec --no-startup-id hsetroot -solid "#000000"
-
-# flux
-exec --no-startup-id redshift-gtk -t 6400:2000
-
-# audio keybindings
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute
-bindsym XF86AudioMute exec amixer -q set Master toggle
-bindsym $mod+bracketleft exec "~/.i3/audio_switcher yeti"
-bindsym $mod+bracketright exec "~/.i3/audio_switcher speakers"
-
 # screen brightness keybindings
 bindsym XF86MonBrightnessDown exec ~/.i3/xbacklight -dec 25
 bindsym XF86MonBrightnessUp exec ~/.i3/xbacklight -inc 25
@@ -227,15 +213,6 @@ bindsym XF86MonBrightnessUp exec ~/.i3/xbacklight -inc 25
 # set up monitors
 # bindsym $mod+m exec ~/.i3/setup_monitor_position
 # exec_always --no-startup-id /usr/bin/nvidia-settings --load-config-only
-
-# use compton for composition
-exec --no-startup-id picom --config ~/.picom.conf
-
-# notification service
-exec --no-startup-id dunst
-
-# i3status tray icons
-exec_always --no-startup-id ~/.i3/tray
 
 # Easy shortcut to take a screenshot
 bindsym Print exec ~/.i3/screenshot 2>> /tmp/screenielog
