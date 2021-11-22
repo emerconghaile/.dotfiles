@@ -2,13 +2,28 @@ FROM archlinux:latest
 
 RUN pacman -Syy --needed --noconfirm sudo
 
-RUN useradd --create-home test
-RUN echo "test ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+RUN useradd --create-home grepsedawk
+RUN echo "grepsedawk ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-COPY . /home/test/.dotfiles
-WORKDIR /home/test/.dotfiles
-RUN chown -R test:test .
+COPY . /home/grepsedawk/.dotfiles
+WORKDIR /home/grepsedawk/.dotfiles
+RUN chown -R grepsedawk:grepsedawk .
 
-USER test
+USER grepsedawk
+
+RUN mkdir $HOME/.ssh
 
 RUN ./install-scripts/install
+
+RUN yay -Syy --noconfirm x11vnc websockify-git novnc
+EXPOSE 6080
+
+ENV DISPLAY=:0.0
+
+CMD bash -c "\
+    Xvfb :0 -screen 0 1920x1080x24 > /dev/null 2>&1 & \
+    x11vnc > /dev/null 2>&1 & \
+    novnc > /dev/null 2>&1 & \
+    sleep 10 && i3 > /dev/null 2>&1 & \
+    zsh \
+    "

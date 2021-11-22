@@ -3,8 +3,8 @@ selection:
 
 font:
   normal:
-    family: Jetbrains Mono
-  size: 11.0
+    family: JetbrainsMono Nerd Font
+    size: 11.0
 
 background_opacity: 0
 colors:

@@ -36,6 +36,7 @@ groff
 grub
 hsetroot
 i3-gaps
+i3lock
 i3status
 iwd
 iwgtk
@@ -47,6 +48,7 @@ make
 nano
 neofetch
 neovim
+nerd-fonts-jetbrains-mono
 nmap
 noto-fonts-emoji
 oh-my-zsh-git
@@ -57,6 +59,7 @@ pavucontrol
 peek
 picom-git
 pkgconf
+playerctl
 pop-bin
 powerline-fonts
 powertop
