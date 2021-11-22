@@ -6,10 +6,10 @@ font:
     family: Jetbrains Mono
     size: 11.0
 
-background_opacity: 0
+background_opacity: 0.85
 colors:
   primary:
-    background: '0x22212c'
+    background: '0x000000'
     foreground: '0xf8f8f2'
 
   normal:
